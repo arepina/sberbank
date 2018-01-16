@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Task.Models.Entry>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br/>
+<p>
+    @Html.ActionLink("Export to excel", "Export")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Silver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Index)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Silver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Index)
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    <img src="@Url.Action("ChartIncome")" alt="Chart" />
+</div>
+<div>
+    <img src="@Url.Action("ChartIndex")" alt="Chart" />
+</div>
+<div>
+    <img src="@Url.Action("ChartSilver")" alt="Chart" />
+</div>

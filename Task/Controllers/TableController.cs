@@ -30,8 +30,7 @@ namespace Task.Controllers
 
         // POST: Table/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Date,Income,Silver,Index")] Entry entry)
+        public ActionResult Create(Entry entry)
         {
             if (ModelState.IsValid)
             {
